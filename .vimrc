@@ -2,12 +2,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" Tab navigation
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
-
 " Ruby autocomplete
 autocmd FileType ruby compiler ruby
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
@@ -38,3 +32,13 @@ set smartcase
 
 " Enable def/end block matching
 runtime macros/matchit.vim
+
+" Mapping windows navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Mapping windows re-sizing
+map <C-+> <C-w>+
+map <C--> <C-w>-
