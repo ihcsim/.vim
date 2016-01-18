@@ -42,3 +42,5 @@ map <C-l> <C-w>l
 " Mapping windows re-sizing
 map <C-+> <C-w>+
 map <C--> <C-w>-
+
+let g:vim_markdown_folding_disabled = 1
