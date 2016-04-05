@@ -11,8 +11,11 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " Replace tabs with spaces, 2 space-width
 set tabstop=2 shiftwidth=2 expandtab
 
-" Add full file path to statusline
+" Show Syntastic warnings at status line
 set statusline+=%F
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " Make statusline visible
 set laststatus=2
