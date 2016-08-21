@@ -2,6 +2,8 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+colorscheme busybee
+
 " Ruby autocomplete
 autocmd FileType ruby compiler ruby
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
