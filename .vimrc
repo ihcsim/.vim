@@ -4,6 +4,9 @@ filetype plugin indent on
 
 colorscheme busybee
 
+" Make sure the 'delete' key works
+set backspace=indent,eol,start
+
 " show leader key when pressed
 set showcmd
 
