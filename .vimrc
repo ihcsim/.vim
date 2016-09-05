@@ -72,3 +72,5 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+let g:vim_markdown_folding_disabled = 1
