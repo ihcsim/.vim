@@ -32,6 +32,11 @@ set smartcase
 " Enable def/end block matching
 runtime macros/matchit.vim
 
+" Load nerdtree file explorer on-start
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Mapping windows navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
