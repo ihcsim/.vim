@@ -22,3 +22,9 @@
 [submodule "nerdtree"]
 	path = bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+[submodule "minibufexpl"]
+	path = bundle/minibufexpl
+	url = git@github.com:fholgado/minibufexpl.vim.git
+[submodule "ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
