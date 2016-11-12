@@ -2,7 +2,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-colorscheme busybee
+colorscheme darkblue
 
 " Make sure the 'delete' key works
 set backspace=indent,eol,start
@@ -89,3 +89,6 @@ endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 let g:vim_markdown_folding_disabled = 1
+
+" Toggle cursorline
+autocmd InsertEnter,InsertLeave * set cul!
