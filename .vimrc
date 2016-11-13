@@ -4,10 +4,13 @@ filetype plugin indent on
 
 colorscheme darkblue
 
+" Set transparent background
+hi Normal ctermbg=none
+
 " Make sure the 'delete' key works
 set backspace=indent,eol,start
 
-" show leader key when pressed
+" Show leader key when pressed
 set showcmd
 
 " Replace tabs with spaces, 2 space-width
