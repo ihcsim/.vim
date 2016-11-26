@@ -47,10 +47,10 @@ let g:ctrlp_switch_buffer = 'et'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules
 
 " Mapping windows navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+map <C-LEFT> <C-w>h
+map <C-DOWN> <C-w>j
+map <C-UP> <C-w>k
+map <C-RIGHT> <C-w>l
 
 " Mapping windows re-sizing
 map <C-+> <C-w>+
