@@ -14,7 +14,10 @@ set backspace=indent,eol,start
 set showcmd
 
 " Replace tabs with spaces, 2 space-width
-set tabstop=2 softtabstop=0 shiftwidth=2 expandtab smarttab
+set autoindent
+set expandtab
+set softtabstop=2
+set shiftwidth=2
 
 " Make statusline visible
 set laststatus=2
@@ -47,10 +50,16 @@ let g:ctrlp_switch_buffer = 'et'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules
 
 " Mapping windows navigation
-map <C-LEFT> <C-w>h
-map <C-DOWN> <C-w>j
-map <C-UP> <C-w>k
-map <C-RIGHT> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Move arrow keys to move text in normal and visual mode
+nmap <C-Left> <<
+nmap <C-Right> >>
+vmap <C-Left> <gv
+vmap <C-Right> >gv
 
 " Mapping windows re-sizing
 map <C-+> <C-w>+
