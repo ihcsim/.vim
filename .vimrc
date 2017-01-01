@@ -15,9 +15,10 @@ set showcmd
 
 " Replace tabs with spaces, 2 space-width
 set autoindent
-set expandtab
+set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set expandtab
 
 " Make statusline visible
 set laststatus=2
@@ -68,10 +69,6 @@ map <C--> <C-w>-
 " Mapping next/previous errors
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
-
-" Move selected area in visual mode
-vmap <C-h> <gv
-vmap <C-l> >gv
 
 " All go errors go to quickfix error list
 let g:go_list_type = "quickfix"
