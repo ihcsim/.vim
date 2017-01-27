@@ -1,8 +1,19 @@
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
 
 colorscheme darkblue
+syntax on
+
+" change the mapleader from \ to ,
+let mapleader=","
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>rv :so $MYVIMRC<CR>
+
+" Hides buffers, instead of closing them so we can open other files
+" without having to close existing one.
+set hidden
 
 " Set transparent background
 hi Normal ctermbg=none
@@ -10,15 +21,28 @@ hi Normal ctermbg=none
 " Make sure the 'delete' key works
 set backspace=indent,eol,start
 
+" Don't wrap lines
+set nowrap
+
 " Show leader key when pressed
 set showcmd
 
+" Copy the previous indent on auto-indent
+set copyindent
+
+" Number of spaces to use for auto-indenting
+set shiftwidth=2
+
+" Use multiple of shiftwidth when indenting with '<' and '>'
+set shiftround
+
 " Replace tabs with spaces, 2 space-width
-set autoindent
 set tabstop=2
 set softtabstop=2
-set shiftwidth=2
 set expandtab
+
+" set show matching parenthesis
+set showmatch
 
 " Make statusline visible
 set laststatus=2
@@ -32,18 +56,31 @@ set incsearch
 " Set line number
 set nu
 
-" Set case insensitvity
+" Case-insensitive search
 set ignorecase
 set smartcase
 
+" Map paste mode to F2 key
+set pastetoggle=<F2>
+
 " Enable def/end block matching
 runtime macros/matchit.vim
+
+" Change the terminal's title
+set title
+
+" Don't beep
+set visualbell
+set noerrorbells
 
 " Load nerdtree file explorer on-start
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Map ':' to ';' so to save, I can just do ';w'
+nnoremap ; :
 
 " ctrlp settings
 let g:ctrlp_working_path_mode = 'ra'
