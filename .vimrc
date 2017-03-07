@@ -89,8 +89,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules
 
 " Mapping windows navigation
 map <A-Left> <C-w>h
-map <A-Up> <C-w>j
-map <A-Down> <C-w>k
+map <A-Down> <C-w>j
+map <A-Up> <C-w>k
 map <A-Right> <C-w>l
 
 " Move arrow keys to move text in normal and visual mode
