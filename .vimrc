@@ -7,9 +7,9 @@ syntax on
 " change the mapleader from \ to ,
 let mapleader=","
 
-" Quickly edit/reload the vimrc file
+" Quickly evit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>rv :so $MYVIMRC<CR>
+nmap <silent> <leader>lv :so $MYVIMRC<CR>
 
 " Hides buffers, instead of closing them so we can open other files
 " without having to close existing one.
@@ -20,9 +20,6 @@ hi Normal ctermbg=none
 
 " Make sure the 'delete' key works
 set backspace=indent,eol,start
-
-" Don't wrap lines
-set nowrap
 
 " Show leader key when pressed
 set showcmd
@@ -79,6 +76,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Show hidden files in NERDTree
+let NERDTreeShowHidden=1
+
 " Map ':' to ';' so to save, I can just do ';w'
 nnoremap ; :
 
@@ -88,10 +88,10 @@ let g:ctrlp_switch_buffer = 'et'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules
 
 " Mapping windows navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+map <A-Left> <C-w>h
+map <A-Up> <C-w>j
+map <A-Down> <C-w>k
+map <A-Right> <C-w>l
 
 " Move arrow keys to move text in normal and visual mode
 nmap <C-Left> <<
