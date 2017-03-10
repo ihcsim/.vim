@@ -80,7 +80,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeShowHidden=1
 
 " Map ':' to ';' so to save, I can just do ';w'
-nnoremap ; :
+noremap ; :
+
+" Map start and end line in normal mode
+noremap 1 0
+noremap 0 $
 
 " ctrlp settings
 let g:ctrlp_working_path_mode = 'ra'
