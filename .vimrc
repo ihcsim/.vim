@@ -111,6 +111,9 @@ map <C--> <C-w>-
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 
+" Use F5 to list all numbered buffers
+:nnoremap <F5> :buffers<CR>:buffer<Space>
+
 " All go errors go to quickfix error list
 let g:go_list_type = "quickfix"
 
