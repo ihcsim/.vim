@@ -1,8 +1,10 @@
 execute pathogen#infect()
 filetype plugin indent on
 
-colorscheme darkblue
 syntax on
+
+" autoclose pairs
+let g:AutoClosePairs = "() {} <> | ' \""
 
 " change the mapleader from \ to ,
 let mapleader=","
