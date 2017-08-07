@@ -147,3 +147,6 @@ let g:vim_markdown_folding_disabled = 1
 
 " Toggle cursorline
 autocmd InsertEnter,InsertLeave * set cul!
+
+" Turn off visual bell
+set t_vb=
