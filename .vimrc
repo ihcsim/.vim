@@ -84,20 +84,16 @@ let NERDTreeShowHidden=1
 " Map ':' to ';' so to save, I can just do ';w'
 noremap ; :
 
-" Map start and end line in normal mode
-noremap 1 0
-noremap 0 $
-
 " ctrlp settings
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules
 
 " Mapping windows navigation
-map <A-Left> <C-w>h
-map <A-Down> <C-w>j
-map <A-Up> <C-w>k
-map <A-Right> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Move arrow keys to move text in normal and visual mode
 nmap <C-Left> <<
