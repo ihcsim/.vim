@@ -154,3 +154,10 @@ set t_vb=
 
 " Indentation in YAML file
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Clear highlight
+nnoremap <Leader><space> :noh<cr>
+
+-" Map start and end line in normal mode
+noremap <leader>1 0
+noremap <leader>0 $
