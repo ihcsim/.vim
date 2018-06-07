@@ -161,3 +161,6 @@ nnoremap <Leader><space> :noh<cr>
 -" Map start and end line in normal mode
 noremap <leader>1 0
 noremap <leader>0 $
+
++" Synastic doesn't check Go files on save by default (anymore), this restores that behaviour
+let g:syntastic_go_checkers = ['go']
