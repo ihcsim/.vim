@@ -7,7 +7,7 @@ syntax on
 let g:AutoClosePairs = "() {} <> | ' \""
 
 " change the mapleader from \ to ,
-let mapleader=","
+let mapleader="\<Space>"
 
 " Quickly evit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
