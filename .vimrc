@@ -163,8 +163,20 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 nnoremap <Leader><space> :noh<cr>
 
 -" Map start and end line in normal mode
-noremap <leader>1 0
-noremap <leader>0 $
+noremap <leader>q 0
+noremap <leader>p $
 
 +" Synastic doesn't check Go files on save by default (anymore), this restores that behaviour
 let g:syntastic_go_checkers = ['go']
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
