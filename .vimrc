@@ -80,6 +80,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
+let NERDTreeDirArrows = 1
+
+nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 
 " Map ':' to ';' so to save, I can just do ';w'
 noremap ; :
