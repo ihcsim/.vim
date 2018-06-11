@@ -182,3 +182,6 @@ noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
 highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
+
+" Insert new line in normal mode
+nmap <Enter> o<Esc>
