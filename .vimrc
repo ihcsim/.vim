@@ -151,7 +151,7 @@ autocmd InsertEnter,InsertLeave * set cul!
 " Cursorline color
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=NONE ctermbg=red ctermfg=white
+hi CursorLine cterm=NONE ctermbg=darkblue ctermfg=white
 
 " Turn off visual bell
 set t_vb=
