@@ -4,7 +4,7 @@ filetype plugin indent on
 syntax on
 
 " autoclose pairs
-let g:AutoClosePairs = "() {} <> | ' \""
+let g:AutoClosePairs = "{}"
 
 " change the mapleader from \ to ,
 let mapleader="\<Space>"
