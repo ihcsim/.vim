@@ -94,16 +94,16 @@ let g:ctrlp_switch_buffer = 'et'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules
 
 " Mapping windows navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+map <C-Left> <C-w>h
+map <C-Down> <C-w>j
+map <C-Up> <C-w>k
+map <C-Right> <C-w>l
 
 " Move arrow keys to move text in normal and visual mode
-nmap <C-Left> <<
-nmap <C-Right> >>
-vmap <C-Left> <gv
-vmap <C-Right> >gv
+nmap <Alt-Left> <<
+nmap <Alt-Right> >>
+vmap <Alt-Left> <gv
+vmap <Alt-Right> >gv
 
 " Mapping windows re-sizing
 map <C-+> <C-w>+
@@ -151,7 +151,7 @@ autocmd InsertEnter,InsertLeave * set cul!
 " Cursorline color
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=NONE ctermbg=darkblue ctermfg=white
+hi CursorLine cterm=NONE ctermbg=yellow ctermfg=black
 
 " Turn off visual bell
 set t_vb=
@@ -181,7 +181,8 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
+highlight StatusLine cterm=bold ctermfg=black ctermbg=lightblue
+highlight StatusLineNC cterm=bold ctermfg=black ctermbg=lightyellow
 
 " Insert new line in normal mode
 nmap <Enter> o<Esc>
