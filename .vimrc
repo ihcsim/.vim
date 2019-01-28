@@ -83,7 +83,7 @@ let NERDTreeShowHidden=1
 let NERDTreeDirArrows = 1
 
 nnoremap <Leader>f :NERDTreeToggle<Enter>
-nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+nnoremap <silent> <Leader>g :NERDTreeFind<CR>
 
 " Map ':' to ';' so to save, I can just do ';w'
 noremap ; :
@@ -122,6 +122,9 @@ let g:go_list_type = "quickfix"
 " Run goimports when saving file
 let g:go_fmt_command = "goimports"
 
+" Indentation in YAML file
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " Go mappings
 autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
@@ -151,16 +154,13 @@ autocmd InsertEnter,InsertLeave * set cul!
 " Cursorline color
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=NONE ctermbg=yellow ctermfg=black
+hi CursorLine cterm=NONE ctermbg=white ctermfg=black
 
 " Turn off visual bell
 set t_vb=
 
-" Indentation in YAML file
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 " Clear highlight
-nnoremap <Leader><space> :noh<cr>
+nnoremap <leader><space> :noh<cr>
 
 -" Map start and end line in normal mode
 noremap <leader>q 0
@@ -181,8 +181,11 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-highlight StatusLine cterm=bold ctermfg=black ctermbg=lightblue
-highlight StatusLineNC cterm=bold ctermfg=black ctermbg=lightyellow
+highlight StatusLine cterm=bold ctermfg=black ctermbg=white
+highlight StatusLineNC cterm=bold ctermfg=black ctermbg=cyan
 
 " Insert new line in normal mode
 nmap <Enter> o<Esc>
+
+noremap <leader>c "+y
+noremap <leader>v "*p
