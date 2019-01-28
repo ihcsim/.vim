@@ -3,8 +3,17 @@ filetype plugin indent on
 
 syntax on
 
+" use 256 color
+set t_Co=256
+
+" default color scheme
+let g:colorscheme = "xian"
+
 " autoclose pairs
 let g:AutoClosePairs = "{}"
+
+" airline status line theme
+let g:airline_theme = "papercolor"
 
 " change the mapleader from \ to ,
 let mapleader="\<Space>"
@@ -16,9 +25,6 @@ nmap <silent> <leader>lv :so $MYVIMRC<CR>
 " Hides buffers, instead of closing them so we can open other files
 " without having to close existing one.
 set hidden
-
-" Set transparent background
-hi Normal ctermbg=none
 
 " Make sure the 'delete' key works
 set backspace=indent,eol,start
@@ -111,7 +117,7 @@ map <C--> <C-w>-
 
 " Mapping next/previous errors
 map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
+map <C-b> :cprevious<CR>
 
 " Use F5 to list all numbered buffers
 :nnoremap <F5> :buffers<CR>:buffer<Space>
@@ -154,7 +160,7 @@ autocmd InsertEnter,InsertLeave * set cul!
 " Cursorline color
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=NONE ctermbg=white ctermfg=black
+hi CursorLine cterm=NONE ctermbg=blue ctermfg=black
 
 " Turn off visual bell
 set t_vb=
