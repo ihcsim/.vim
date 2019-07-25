@@ -7,7 +7,7 @@ syntax on
 set t_Co=256
 
 " default color scheme
-let g:colorscheme = "xian"
+let g:colorscheme = "zen"
 
 " autoclose pairs
 let g:AutoClosePairs = "{}"
@@ -116,14 +116,18 @@ map <C-+> <C-w>+
 map <C--> <C-w>-
 
 " Mapping next/previous errors
-map <C-n> :cnext<CR>
-map <C-b> :cprevious<CR>
+map <C-n> :cn<CR>
+map <C-m> :cp<CR>
 
 " Use F5 to list all numbered buffers
 :nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " All go errors go to quickfix error list
-let g:go_list_type = "quickfix"
+let g:go_list_type = 'locationlist'
+
+" Mapping next/previous errors in location list
+map <leader>n :lnext<CR>
+map <leader>b :lprevious<CR>
 
 " Run goimports when saving file
 let g:go_fmt_command = "goimports"
@@ -160,7 +164,7 @@ autocmd InsertEnter,InsertLeave * set cul!
 " Cursorline color
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=NONE ctermbg=blue ctermfg=black
+hi CursorLine cterm=NONE ctermbg=lightyellow ctermfg=black
 
 " Turn off visual bell
 set t_vb=
@@ -168,12 +172,15 @@ set t_vb=
 " Clear highlight
 nnoremap <leader><space> :noh<cr>
 
--" Map start and end line in normal mode
+" Map start and end line in normal mode
 noremap <leader>q 0
 noremap <leader>p $
 
-+" Synastic doesn't check Go files on save by default (anymore), this restores that behaviour
+" Synastic doesn't check Go files on save by default (anymore), this restores that behaviour
 let g:syntastic_go_checkers = ['go']
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 
 " Go to tab by number
 noremap <leader>1 1gt
