@@ -91,7 +91,7 @@ let NERDTreeDirArrows = 1
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 nnoremap <silent> <Leader>g :NERDTreeFind<CR>
 
-" Map ':' to ';' so to save, I can just do ';w'
+" Map ':' to ';' so to save typing, I can just do ';w'
 noremap ; :
 
 " ctrlp settings
@@ -100,10 +100,10 @@ let g:ctrlp_switch_buffer = 'et'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules
 
 " Mapping windows navigation
-map <C-Left> <C-w>h
-map <C-Down> <C-w>j
-map <C-Up> <C-w>k
-map <C-Right> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Move arrow keys to move text in normal and visual mode
 nmap <Alt-Left> <<
@@ -116,18 +116,21 @@ map <C-+> <C-w>+
 map <C--> <C-w>-
 
 " Mapping next/previous errors
-map <C-n> :cn<CR>
-map <C-m> :cp<CR>
+map <C-n> :cnext<CR>
+map <C-b> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+" Mapping next/previous errors in location list
+map <leader>n :lnext<CR>
+map <leader>m :lprevious<CR>
 
 " Use F5 to list all numbered buffers
 :nnoremap <F5> :buffers<CR>:buffer<Space>
 
-" All go errors go to quickfix error list
-let g:go_list_type = 'locationlist'
+set autowrite
 
-" Mapping next/previous errors in location list
-map <leader>n :lnext<CR>
-map <leader>b :lprevious<CR>
+" All go errors go to quickfix error list
+let g:go_list_type = "quickfix"
 
 " Run goimports when saving file
 let g:go_fmt_command = "goimports"
@@ -141,11 +144,12 @@ autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 
-" Ruby autocomplete
-autocmd FileType ruby compiler ruby
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+" Build/Test Go files on save.
+augroup auto_go
+	autocmd!
+	autocmd BufWritePost *.go :GoBuild
+	autocmd BufWritePost *_test.go :GoTest
+augroup end
 
 " Remove trailing spaces on-save
 fun! <SID>StripTrailingWhitespaces()
@@ -175,12 +179,6 @@ nnoremap <leader><space> :noh<cr>
 " Map start and end line in normal mode
 noremap <leader>q 0
 noremap <leader>p $
-
-" Synastic doesn't check Go files on save by default (anymore), this restores that behaviour
-let g:syntastic_go_checkers = ['go']
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
 
 " Go to tab by number
 noremap <leader>1 1gt
