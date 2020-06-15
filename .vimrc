@@ -6,9 +6,6 @@ syntax on
 " use 256 color
 set t_Co=256
 
-" default color scheme
-let g:colorscheme = "zen"
-
 " autoclose pairs
 let g:AutoClosePairs = "{}"
 
@@ -129,6 +126,9 @@ map <leader>m :lprevious<CR>
 
 set autowrite
 
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
 " All go errors go to quickfix error list
 let g:go_list_type = "quickfix"
 
@@ -143,13 +143,6 @@ autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
-
-" Build/Test Go files on save.
-augroup auto_go
-	autocmd!
-	autocmd BufWritePost *.go :GoBuild
-	autocmd BufWritePost *_test.go :GoTest
-augroup end
 
 " Remove trailing spaces on-save
 fun! <SID>StripTrailingWhitespaces()
@@ -194,9 +187,7 @@ noremap <leader>0 :tablast<cr>
 
 highlight StatusLine cterm=bold ctermfg=black ctermbg=white
 highlight StatusLineNC cterm=bold ctermfg=black ctermbg=cyan
-
-" Insert new line in normal mode
-nmap <Enter> o<Esc>
+highlight Search cterm=NONE ctermfg=black ctermbg=yellow
 
 noremap <leader>c "+y
 noremap <leader>v "*p
