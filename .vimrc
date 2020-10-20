@@ -75,12 +75,6 @@ set title
 set visualbell
 set noerrorbells
 
-" Load nerdtree file explorer on-start
-autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeDirArrows = 1
@@ -189,5 +183,6 @@ highlight StatusLine cterm=bold ctermfg=black ctermbg=white
 highlight StatusLineNC cterm=bold ctermfg=black ctermbg=cyan
 highlight Search cterm=NONE ctermfg=black ctermbg=yellow
 
+" Copy and paste to system clipboard
 noremap <leader>c "+y
 noremap <leader>v "*p
