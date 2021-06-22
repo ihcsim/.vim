@@ -1,7 +1,6 @@
 execute pathogen#infect()
-filetype plugin indent on
-
 syntax on
+filetype plugin indent on
 
 " use 256 color
 set t_Co=256
@@ -75,15 +74,21 @@ set title
 set visualbell
 set noerrorbells
 
+" Run RustFmt on-asve
+let g:rustfmt_autosave = 1
+
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeDirArrows = 1
 
-nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>g :NERDTreeFind<CR>
 
 " Map ':' to ';' so to save typing, I can just do ';w'
 noremap ; :
+
+" Toggle tagbar
+nmap <Leader>d :TagbarToggle<CR>
 
 " ctrlp settings
 let g:ctrlp_working_path_mode = 'ra'
@@ -184,5 +189,5 @@ highlight StatusLineNC cterm=bold ctermfg=black ctermbg=cyan
 highlight Search cterm=NONE ctermfg=black ctermbg=yellow
 
 " Copy and paste to system clipboard
-noremap <leader>c "+y
+noremap <leader>c "*y
 noremap <leader>v "*p
