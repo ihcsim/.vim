@@ -205,3 +205,9 @@ noremap <leader>e :Errors<cr>
 map <leader>n :lnext<cr>
 map <leader>m :lprevious<cr>
 map <leader>q :lclose<cr>
+
+" NERDCommenter's default mappings
+let g:NERDCreateDefaultMappings = 1
+let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
