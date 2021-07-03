@@ -1,15 +1,17 @@
 execute pathogen#infect()
-syntax on
+syntax enable
 filetype plugin indent on
+
+set ballooneval
+set balloonevalterm
+set mouse=a
+set ttymouse=sgr
 
 " use 256 color
 set t_Co=256
 
 " autoclose pairs
 let g:AutoClosePairs = "{}"
-
-" airline status line theme
-let g:airline_theme = "papercolor"
 
 " change the mapleader from \ to ,
 let mapleader="\<Space>"
@@ -46,7 +48,7 @@ set expandtab
 set showmatch
 
 " Make statusline visible
-set laststatus=2
+set laststatus=0
 
 " Highlight search
 set hlsearch
@@ -74,7 +76,7 @@ set title
 set visualbell
 set noerrorbells
 
-" Run RustFmt on-asve
+" Run RustFmt on-save
 let g:rustfmt_autosave = 1
 
 " Show hidden files in NERDTree
@@ -116,10 +118,6 @@ map <C-n> :cnext<CR>
 map <C-b> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
-" Mapping next/previous errors in location list
-map <leader>n :lnext<CR>
-map <leader>m :lprevious<CR>
-
 " Use F5 to list all numbered buffers
 :nnoremap <F5> :buffers<CR>:buffer<Space>
 
@@ -128,7 +126,7 @@ set autowrite
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
-" All go errors go to quickfix error list
+" All go errors go to quickfix error list to avoid conflicts with syntastic
 let g:go_list_type = "quickfix"
 
 " Run goimports when saving file
@@ -184,10 +182,26 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-highlight StatusLine cterm=bold ctermfg=black ctermbg=white
-highlight StatusLineNC cterm=bold ctermfg=black ctermbg=cyan
 highlight Search cterm=NONE ctermfg=black ctermbg=yellow
 
 " Copy and paste to system clipboard
 noremap <leader>c "*y
 noremap <leader>v "*p
+
+" Syntastic configuration
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_loc_list_height = 5
+
+" Syntastic mappings
+noremap <leader>i :SyntasticInfo<cr>
+noremap <leader>c :SyntasticCheck<cr>
+noremap <leader>r :SyntasticReset<cr>
+noremap <leader>t :SyntasticToggleMode<cr>
+noremap <leader>e :Errors<cr>
+
+" Mapping next/previous errors in location list
+map <leader>n :lnext<cr>
+map <leader>m :lprevious<cr>
+map <leader>q :lclose<cr>
